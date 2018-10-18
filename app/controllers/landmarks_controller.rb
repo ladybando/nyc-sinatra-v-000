@@ -10,5 +10,16 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/new'
   end
   
+    post '/landmarks' do
+    @landmark= Landmark.create(params['landmark'])
+    unless params[:landmark][:name].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
+    end
+     unless params[:title][:name].empty?
+      @figure.titles << Title.create(params[:title])
+    end
+     @figure.save
+    redirect to "/figures/#{@figure.id}"
+  end
   
 end
