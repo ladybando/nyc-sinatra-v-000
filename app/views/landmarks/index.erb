@@ -3,7 +3,7 @@
 <table>
   <th>Landmark</th>
   <tr>
-    <% @landmarks.each do |landamrk| %>
+    <% @landmarks.each do |landmark| %>
       <td align="center"><a href="/figures/<%= landmark.id %>"><%= landmark.name %></a>
       <ul>
         <%landmark.titles.each do |title|%>
