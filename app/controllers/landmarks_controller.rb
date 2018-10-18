@@ -2,7 +2,7 @@ class LandmarksController < ApplicationController
   # add controller methods
   get '/landmarks' do
     @landmarks = Landmark.all
-    erb :"/landmarks/index"
+    @figures = Figure.all
   end
   
   get '/landmarks/new' do
