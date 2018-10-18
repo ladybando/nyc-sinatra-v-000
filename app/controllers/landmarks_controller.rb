@@ -19,20 +19,17 @@ class LandmarksController < ApplicationController
     redirect to "/landmarks/show"
   end
   
-  get '/landmarks/edit' do
-    @song = Song.find_by_slug(params[:slug])
-    erb :'songs/edit'
+  post '/landmarks/:id' do
+    @landmark = Landmark.find(params[:id])
+    @landmark.name = params['landmark']['name']
+    @landmark.year_completed = params['landmark']['year_completed']
+    @landmark.save
+    redirect to "/landmarks/#{@landmark.id}"
   end
-
-  patch '/songs/:slug' do
-    @song = Song.find_by_slug(params[:slug])
-    @song.update(params[:song])
-    @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
-    @song.genre_ids = params[:genres]
-    @song.save
-
-    flash[:message] = "Successfully updated song."
-    redirect("/songs/#{@song.slug}")
+  
+   post '/landmarks' do
+    Landmark.create(name: params['landmark']['name'], year_completed: params['landmark']['year_completed'])
+    redirect '/landmarks'
   end
   
 end
