@@ -12,7 +12,7 @@ class LandmarksController < ApplicationController
   
     post '/landmarks' do
     @landmark= Landmark.create(params['landmark'])
-    ifparams[:figure][:name].empty?
+    if params[:figure][:name].empty?
       @landmark.figures << Figure.create(params[:figure])
     end
      @figure.save
