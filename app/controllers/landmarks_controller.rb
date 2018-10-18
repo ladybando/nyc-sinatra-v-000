@@ -14,6 +14,7 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find(params[:id])
     erb :"landmarks/show"
   end
+  
   post '/landmarks' do
     @landmark= Landmark.create(params['landmark'])
     if params[:figure][:name].empty?
