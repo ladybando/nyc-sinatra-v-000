@@ -42,21 +42,3 @@
     </form>
   </body>
 </html>
-=======
-
-<form  action="/figures"method="POST">
-  <label> Figure Name </label>
-  <input type="text" name="Figure Name"> </br>
-
-  <label> Title Name </label>
-  <input type="text" name="Name"> </br>
-
-  <label> Landmark Name </label>
-  <% Figure.all.each do |figure| %>
-    <input id="<%= figure.name %>" type="checkbox" name="figures[]" value="<%= figure.id %>">
-  <% end %>
-
-  <input type="submit" value="Create">
-  
-</form>
->>>>>>> e698477c5169dcc9de6cadec2cb6a7b1d25f660b
