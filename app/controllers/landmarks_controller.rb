@@ -6,6 +6,7 @@ class LandmarksController < ApplicationController
   end
   
   get '/landmarks/new' do
+    @figure = Figure.find_by_(params[:slug])
     erb :'/landmarks/new'
   end
   
