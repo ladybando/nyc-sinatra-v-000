@@ -4,9 +4,9 @@
   <th>Landmark</th>
   <tr>
     <% @landmarks.each do |figure| %>
-      <td align="center"><a href="/figures/<%= landmaekid %>"><%= landmaek.name %></a>
+      <td align="center"><a href="/figures/<%= landmark.id %>"><%= landmark.name %></a>
       <ul>
-        <%landmaek.titles.each do |title|%>
+        <%landmark.titles.each do |title|%>
         <li><%=title.name%></li>
         <%end%>
       </ul>
