@@ -3,6 +3,7 @@ class FiguresController < ApplicationController
   # add controller methods
   get '/figures' do
     @figures = Figure.all
+<<<<<<< HEAD
     erb :"/figures/index"
   end
   
@@ -22,4 +23,8 @@ class FiguresController < ApplicationController
     redirect to "/figures/#{@figure.id}"
   end
 
+=======
+    erb :"/figures/new"
+  end
+>>>>>>> e698477c5169dcc9de6cadec2cb6a7b1d25f660b
 end
