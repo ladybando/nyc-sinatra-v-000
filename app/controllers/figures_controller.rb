@@ -21,6 +21,7 @@ class FiguresController < ApplicationController
      @figure.save
     redirect to "/figures/show"
   end
+  
 	  patch '/figures/:id' do
     @figure = Figure.find_by_id(params[:id])
     @figure.update(params[:figure])
